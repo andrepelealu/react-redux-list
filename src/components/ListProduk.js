@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {ambildata} from '../action'
+import {ambildata, pilihProduk} from '../action'
 
 export class ListProduk extends Component {
   
@@ -11,7 +11,7 @@ export class ListProduk extends Component {
     renderList(){
         return this.props.listProdukProps.map(produk=>{
             return (
-                <h3 key={produk.id}>{produk.namaproduk}</h3>
+                <h3 onClick={()=>this.props.pilihProduk(produk)} key={produk.id}>{produk.namaproduk}</h3>
             )
         })
     }
@@ -30,4 +30,4 @@ const stateToProps = state =>{
         listProdukProps : state.listProduk
     }
 }
-export default connect(stateToProps, {ambildata})(ListProduk)
+export default connect(stateToProps, {ambildata,pilihProduk})(ListProduk)

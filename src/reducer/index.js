@@ -8,6 +8,14 @@ const listProdukReducer=(initialState=[], action)=>{
     return initialState
 }
 
+const produkTerpilihReducer=(initialState=[],action)=>{
+    if(action.type === 'PILIH_PRODUK'){
+        return action.data
+    }
+    return initialState
+}
+
 export default combineReducers({
-    listProduk : listProdukReducer
+    listProduk : listProdukReducer,
+    pilihan : produkTerpilihReducer
 })

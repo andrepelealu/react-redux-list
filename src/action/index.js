@@ -16,3 +16,10 @@ export const ambildata=()=>{
         data: data
     }
 }
+
+export const pilihProduk=(produk)=>{
+    return{
+        type: 'PILIH_PRODUK',
+        data: produk
+    }
+}
